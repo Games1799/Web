@@ -1,6 +1,166 @@
 <!DOCTYPE html>
 <html>
-<body style="background-color:#FF8100;">
-
-</body>
+<head>
+  
+</head>
+   <body style="background:gray;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;">
+      <div style="width:343px;height:672px;background:#D9D9D9;border-radius:20px;">
+        <p style="margin:20px;text-align:center;font-size:30px">Список инжекторов</p>
+        <div style="border-bottom:1px solid black;margin:0 0px;"> </div>
+        <button id="android" style="user-select:none;display:block;margin:12px auto;width:300px;height:50px;font-size:15px;border-radius:12px">Android</button>
+        <button id="Windows" style="user-select:none;display:block;margin:8px auto;width:300px;height:50px;font-size:15px;border-radius:12px">Windows</button>
+        <button id="Ios" style="user-select:none;display:block;margin:8px auto;width:300px;height:50px;font-size:15px;border-radius:12px">Ios</button>
+        <button id="MacOs" style="user-select:none;display:block;margin:8px auto;width:300px;height:50px;font-size:15px;border-radius:12px">MacOs</button>
+      </div>
+      <script>
+        document.getElementById("android").onclick = function() {
+          let win = document.createElement("div");
+          
+          win.style.cssText = `
+          position:fixed;
+          top:50%;
+          left:50%;
+          transform:translate(-50%,-50%);
+          width:300px;
+          height:500px;
+          background:white;
+          border-radius:12px;
+          text-align:center;
+          padding:10px;
+          position:fixed`;
+          
+          win.style.position = "fixed";
+          let title = document.createElement("p")
+          title.innerText = "Android"
+          let close = document.createElement("button")
+          close.innerText = "X"
+          let title2 = document.createElement("div")
+          let content = document.createElement("div")
+          content.style.cssText = "height:418px;overflow-y:auto;padding:10px;box-sizing:border-box;"
+          
+          title.style.cssText = `
+          font-size:25px;
+          `;
+          
+          title2.style.cssText = `
+          border-bottom:1px solid black;
+          margin:0 -10px
+          `
+          
+          close.style.cssText = `
+          user-select:none;
+          position:absolute;
+          top:30px;
+          right:30px;
+          width:30px;
+          height:30px;
+          border-radius:6px;
+          `;
+          
+          close.onclick = function() {
+            win.remove();
+          }
+          
+          function create(name, online, sunc, loadlik, dslink, parent) {
+            let item = document.createElement("div")
+            let status = document.createElement("div")
+            let suncst = document.createElement("div")
+            let link = document.createElement("button")
+            let disclink = document.createElement("button")
+            
+            item.style.cssText = `
+            width:100%;
+            height:100px;
+            background:#eee;
+            border-radius:12px;
+            margin:6px 0;
+            display:flex;
+            align-items:center;
+            padding:10px;
+            box-sizing:border-box;
+            position:relative;
+            overflow:hidden;
+            `;
+            
+            status.style.cssText = `
+            width:8px;
+            height:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            background:${online ? "green" : "red"};
+            `;
+            
+            suncst.style.cssText = `
+            position:absolute;
+            top:8px;
+            right:10px;
+            font-size:12px;
+            font-weight:bold;
+            `;
+            suncst.innerText = `sUNC: ${sunc}%`
+            
+            link.innerText = "download"
+            link.style.cssText = `
+            position:absolute;
+            right:10px;
+            bottom:10px;
+            width:90px;
+            height:e0px;
+            border-radius:8px;
+            `
+            
+            disclink.innerText = "discord"
+            
+            disclink.style.cssText = `
+            position:absolute;
+            right:10px;
+            bottom:40px;
+            width:90px;
+            height:e0px;
+            border-radius:8px;
+            `
+            
+            disclink.onclick = function() {
+              window.open(dslink)
+            }
+            
+            link.onclick = function() {
+              window.open(loadlik)
+            }
+            
+            item.innerText = name
+            item.appendChild(status)
+            item.appendChild(suncst)
+            item.appendChild(link)
+            item.appendChild(disclink)
+            parent.appendChild(item)
+          }
+          
+          win.appendChild(title)
+          win.appendChild(close)
+          win.appendChild(title2)
+          win.appendChild(content)
+          
+          create("Delta X",true,99,"https://deltaexploits.gg","https://discord.gg/deltax",content)
+          create("Arceus X",true,100,"https://spdmteam.com/index?os=android","https://discord.spdmteam.com",content)
+          create("Codex",true,100,"https://codex.lol","https://discord.gg/codexlol",content)
+          create("Vega X",true,100,"https://www.vegax.gg","https://www.vegax.gg/discord.html",content)
+          create("Eclipse",true,96,"https://eclipse.download","https://discord.gg/kzBj5un4c",content)
+          create("Cryptic",false,97,"https://getcryptic.net","https://discord.com/invite/Qb6M2Tmge3",content)
+          create("FluxusZ",false,"?","https://fluxusz.com","https://discord.gg/FluxusZ",content)
+          
+          document.body.appendChild(win);
+        }
+        document.getElementById("Windows").onclick = function() {
+          alert("Coming Soon...")
+        }
+        document.getElementById("Ios").onclick = function() {
+          alert("Coming Soon...")
+        }
+        document.getElementById("MacOs").onclick = function() {
+          alert("Coming Soon...")
+        }
+      </script>
+   </body>
 </html>
