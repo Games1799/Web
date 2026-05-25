@@ -106,7 +106,6 @@
             right:10px;
             bottom:10px;
             width:90px;
-            height:e0px;
             border-radius:8px;
             `
             
@@ -117,7 +116,6 @@
             right:10px;
             bottom:40px;
             width:90px;
-            height:e0px;
             border-radius:8px;
             `
             
@@ -153,13 +151,407 @@
           document.body.appendChild(win);
         }
         document.getElementById("Windows").onclick = function() {
-          alert("Coming Soon...")
+          let win = document.createElement("div");
+          
+          win.style.cssText = `
+          position:fixed;
+          top:50%;
+          left:50%;
+          transform:translate(-50%,-50%);
+          width:300px;
+          height:500px;
+          background:white;
+          border-radius:12px;
+          text-align:center;
+          padding:10px;
+          position:fixed`;
+          
+          win.style.position = "fixed";
+          let title = document.createElement("p")
+          title.innerText = "Windows"
+          let close = document.createElement("button")
+          close.innerText = "X"
+          let title2 = document.createElement("div")
+          let content = document.createElement("div")
+          content.style.cssText = "height:418px;overflow-y:auto;padding:10px;box-sizing:border-box;"
+          
+          title.style.cssText = `
+          font-size:25px;
+          `;
+          
+          title2.style.cssText = `
+          border-bottom:1px solid black;
+          margin:0 -10px
+          `
+          
+          close.style.cssText = `
+          user-select:none;
+          position:absolute;
+          top:30px;
+          right:30px;
+          width:30px;
+          height:30px;
+          border-radius:6px;
+          `;
+          
+          close.onclick = function() {
+            win.remove();
+          }
+          
+          function create(name, online, sunc, loadlik, dslink, parent) {
+            let item = document.createElement("div")
+            let status = document.createElement("div")
+            let suncst = document.createElement("div")
+            let link = document.createElement("button")
+            let disclink = document.createElement("button")
+            
+            item.style.cssText = `
+            width:100%;
+            height:100px;
+            background:#eee;
+            border-radius:12px;
+            margin:6px 0;
+            display:flex;
+            align-items:center;
+            padding:10px;
+            box-sizing:border-box;
+            position:relative;
+            overflow:hidden;
+            `;
+            
+            status.style.cssText = `
+            width:8px;
+            height:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            background:${online ? "green" : "red"};
+            `;
+            
+            suncst.style.cssText = `
+            position:absolute;
+            top:8px;
+            right:10px;
+            font-size:12px;
+            font-weight:bold;
+            `;
+            suncst.innerText = `sUNC: ${sunc}%`
+            
+            link.innerText = "download"
+            link.style.cssText = `
+            position:absolute;
+            right:10px;
+            bottom:10px;
+            width:90px;
+            border-radius:8px;
+            `
+            
+            disclink.innerText = "discord"
+            
+            disclink.style.cssText = `
+            position:absolute;
+            right:10px;
+            bottom:40px;
+            width:90px;
+            border-radius:8px;
+            `
+            
+            disclink.onclick = function() {
+              window.open(dslink)
+            }
+            
+            link.onclick = function() {
+              window.open(loadlik)
+            }
+            
+            item.innerText = name
+            item.appendChild(status)
+            item.appendChild(suncst)
+            item.appendChild(link)
+            item.appendChild(disclink)
+            parent.appendChild(item)
+          }
+          
+          win.appendChild(title)
+          win.appendChild(close)
+          win.appendChild(title2)
+          win.appendChild(content)
+          
+          create("Volt",true,98,"https://voltbz.net","https://discord.com/invite/voltbz",content)
+          create("Potassium",true,100,"https://www.potassium.pro","https://discord.com/invite/potassium",content)
+          create("Wave",true,100,"https://getwave.gg","https://discord.gg/rARhPpN7fY",content)
+          create("Synapse Z",false,98,"https://z.synapse.do","https://discord.gg/synz",content)
+          create("Seliware",false,100,"https://seliware.com","https://discord.com/invite/nzEggEE9vx",content)
+          create("Madium",false,100,"https://getmadium.net","https://discord.com/invite/olemad",content)
+          create("Velocity",false,94,"https://realvelocity.xyz","https://discord.com/invite/velocityide",content)
+          create("SirHurt",true,94,"https://sirhurt.net","https://discord.gg/CPKvWTgFdV",content)
+          create("Solara",true,39,"https://getsolara.dev","https://getsolara.dev/discord",content)
+          create("Xeno",false,40,"https://www.xeno.now/","https://discord.gg/xe-no",content)
+          
+          document.body.appendChild(win);
         }
         document.getElementById("Ios").onclick = function() {
-          alert("Coming Soon...")
+          let win = document.createElement("div");
+          
+          win.style.cssText = `
+          position:fixed;
+          top:50%;
+          left:50%;
+          transform:translate(-50%,-50%);
+          width:300px;
+          height:500px;
+          background:white;
+          border-radius:12px;
+          text-align:center;
+          padding:10px;
+          position:fixed`;
+          
+          win.style.position = "fixed";
+          let title = document.createElement("p")
+          title.innerText = "Ios"
+          let close = document.createElement("button")
+          close.innerText = "X"
+          let title2 = document.createElement("div")
+          let content = document.createElement("div")
+          content.style.cssText = "height:418px;overflow-y:auto;padding:10px;box-sizing:border-box;"
+          
+          title.style.cssText = `
+          font-size:25px;
+          `;
+          
+          title2.style.cssText = `
+          border-bottom:1px solid black;
+          margin:0 -10px
+          `
+          
+          close.style.cssText = `
+          user-select:none;
+          position:absolute;
+          top:30px;
+          right:30px;
+          width:30px;
+          height:30px;
+          border-radius:6px;
+          `;
+          
+          close.onclick = function() {
+            win.remove();
+          }
+          
+          function create(name, online, sunc, loadlik, dslink, parent) {
+            let item = document.createElement("div")
+            let status = document.createElement("div")
+            let suncst = document.createElement("div")
+            let link = document.createElement("button")
+            let disclink = document.createElement("button")
+            
+            item.style.cssText = `
+            width:100%;
+            height:100px;
+            background:#eee;
+            border-radius:12px;
+            margin:6px 0;
+            display:flex;
+            align-items:center;
+            padding:10px;
+            box-sizing:border-box;
+            position:relative;
+            overflow:hidden;
+            `;
+            
+            status.style.cssText = `
+            width:8px;
+            height:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            background:${online ? "green" : "red"};
+            `;
+            
+            suncst.style.cssText = `
+            position:absolute;
+            top:8px;
+            right:10px;
+            font-size:12px;
+            font-weight:bold;
+            `;
+            suncst.innerText = `sUNC: ${sunc}%`
+            
+            link.innerText = "download"
+            link.style.cssText = `
+            position:absolute;
+            right:10px;
+            bottom:10px;
+            width:90px;
+            border-radius:8px;
+            `
+            
+            disclink.innerText = "discord"
+            
+            disclink.style.cssText = `
+            position:absolute;
+            right:10px;
+            bottom:40px;
+            width:90px;
+            border-radius:8px;
+            `
+            
+            disclink.onclick = function() {
+              window.open(dslink)
+            }
+            
+            link.onclick = function() {
+              window.open(loadlik)
+            }
+            
+            item.innerText = name
+            item.appendChild(status)
+            item.appendChild(suncst)
+            item.appendChild(link)
+            item.appendChild(disclink)
+            parent.appendChild(item)
+          }
+          
+          win.appendChild(title)
+          win.appendChild(close)
+          win.appendChild(title2)
+          win.appendChild(content)
+          
+          create("Delta X",true,100,"https://deltaexploits.gg","https://discord.gg/deltax",content)
+          
+          document.body.appendChild(win);
         }
         document.getElementById("MacOs").onclick = function() {
-          alert("Coming Soon...")
+          let win = document.createElement("div");
+          
+          win.style.cssText = `
+          position:fixed;
+          top:50%;
+          left:50%;
+          transform:translate(-50%,-50%);
+          width:300px;
+          height:500px;
+          background:white;
+          border-radius:12px;
+          text-align:center;
+          padding:10px;
+          position:fixed`;
+          
+          win.style.position = "fixed";
+          let title = document.createElement("p")
+          title.innerText = "MacOs"
+          let close = document.createElement("button")
+          close.innerText = "X"
+          let title2 = document.createElement("div")
+          let content = document.createElement("div")
+          content.style.cssText = "height:418px;overflow-y:auto;padding:10px;box-sizing:border-box;"
+          
+          title.style.cssText = `
+          font-size:25px;
+          `;
+          
+          title2.style.cssText = `
+          border-bottom:1px solid black;
+          margin:0 -10px
+          `
+          
+          close.style.cssText = `
+          user-select:none;
+          position:absolute;
+          top:30px;
+          right:30px;
+          width:30px;
+          height:30px;
+          border-radius:6px;
+          `;
+          
+          close.onclick = function() {
+            win.remove();
+          }
+          
+          function create(name, online, sunc, loadlik, dslink, parent) {
+            let item = document.createElement("div")
+            let status = document.createElement("div")
+            let suncst = document.createElement("div")
+            let link = document.createElement("button")
+            let disclink = document.createElement("button")
+            
+            item.style.cssText = `
+            width:100%;
+            height:100px;
+            background:#eee;
+            border-radius:12px;
+            margin:6px 0;
+            display:flex;
+            align-items:center;
+            padding:10px;
+            box-sizing:border-box;
+            position:relative;
+            overflow:hidden;
+            `;
+            
+            status.style.cssText = `
+            width:8px;
+            height:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            background:${online ? "green" : "red"};
+            `;
+            
+            suncst.style.cssText = `
+            position:absolute;
+            top:8px;
+            right:10px;
+            font-size:12px;
+            font-weight:bold;
+            `;
+            suncst.innerText = `sUNC: ${sunc}%`
+            
+            link.innerText = "download"
+            link.style.cssText = `
+            position:absolute;
+            right:10px;
+            bottom:10px;
+            width:90px;
+            border-radius:8px;
+            `
+            
+            disclink.innerText = "discord"
+            
+            disclink.style.cssText = `
+            position:absolute;
+            right:10px;
+            bottom:40px;
+            width:90px;
+            border-radius:8px;
+            `
+            
+            disclink.onclick = function() {
+              window.open(dslink)
+            }
+            
+            link.onclick = function() {
+              window.open(loadlik)
+            }
+            
+            item.innerText = name
+            item.appendChild(status)
+            item.appendChild(suncst)
+            item.appendChild(link)
+            item.appendChild(disclink)
+            parent.appendChild(item)
+          }
+          
+          win.appendChild(title)
+          win.appendChild(close)
+          win.appendChild(title2)
+          win.appendChild(content)
+          
+          create("MacSploit",false,100,"https://www.raptor.fun","https://discord.gg/macsploit",content)
+          create("Opiumrare",true,100,"https://discord.gg/opiumware","https://discord.gg/opiumware",content)
+          
+          document.body.appendChild(win);
         }
       </script>
    </body>
